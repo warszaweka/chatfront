@@ -1,3 +1,4 @@
+// Visual represantation of link
 export default class GraphLink {
   constructor(real, node1, node2) {
     this.real = real;

@@ -27,6 +27,7 @@
 </template>
 
 <script>
+// Messages sidebar
 import Message from "./Message.vue";
 
 export default {

@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// Main layout component
 import Messages from "./Messages.vue";
 import Start from "./Start.vue";
 import Graph from "./Graph.vue";

@@ -18,6 +18,7 @@
 </template>
 
 <script>
+// SVG message representation
 import GraphMessage from "../store/classes/GraphMessage";
 
 export default {
@@ -32,6 +33,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

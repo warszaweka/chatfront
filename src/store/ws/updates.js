@@ -1,3 +1,4 @@
+// Handling state updates from server
 import Node from "../classes/Node";
 import Link from "../classes/Link";
 import Message from "../classes/Message";

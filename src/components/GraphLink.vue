@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// SVG link representation
 import GraphLink from "../store/classes/GraphLink";
 
 export default {
@@ -56,6 +57,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

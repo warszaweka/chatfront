@@ -1,3 +1,4 @@
+// Message
 export default class Message {
   constructor(node, id, content, link, time) {
     this.node = node;

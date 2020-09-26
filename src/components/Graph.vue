@@ -64,6 +64,7 @@
 </template>
 
 <script>
+// SVG graph representation
 import Node from "../store/classes/Node";
 import Link from "../store/classes/Link";
 import GraphLink from "../store/classes/GraphLink";

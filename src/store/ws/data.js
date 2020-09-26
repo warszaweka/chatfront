@@ -1,3 +1,4 @@
+// Client side protocol specification
 export function commCreateNode({ name }) {
   return {
     type: "comm",

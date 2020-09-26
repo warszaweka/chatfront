@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// Retrieving user node name
 export default {
   data: () => ({
     name: "",

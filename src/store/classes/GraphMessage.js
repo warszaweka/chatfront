@@ -1,3 +1,4 @@
+// Visual represenation of message
 export default class GraphMessage {
   constructor(real, node1, node2) {
     this.real = real;

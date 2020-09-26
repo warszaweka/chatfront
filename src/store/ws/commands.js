@@ -1,3 +1,4 @@
+// Requests to server
 import * as data from "./data";
 import * as acknowledges from "./acknowledges";
 

@@ -1,3 +1,4 @@
+// Visual representation of node
 export default class GraphNode {
   constructor(real) {
     this.real = real;

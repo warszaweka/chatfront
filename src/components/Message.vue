@@ -7,6 +7,7 @@
 </template>
 
 <script>
+// Message in sidebar
 export default {
   props: {
     sender: {

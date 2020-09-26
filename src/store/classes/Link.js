@@ -1,3 +1,4 @@
+// Chat
 export default class Link {
   constructor(node, id, name, nodes) {
     this.node = node;

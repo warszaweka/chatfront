@@ -16,6 +16,7 @@
 </template>
 
 <script>
+// SVG node representation
 import GraphNode from "../store/classes/GraphNode";
 import Link from "../store/classes/Link";
 import Node from "../store/classes/Node";
@@ -91,6 +92,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

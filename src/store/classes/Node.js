@@ -1,3 +1,4 @@
+// Node
 export default class Node {
   constructor(id, name) {
     this.id = id;
