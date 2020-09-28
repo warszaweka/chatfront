@@ -1,18 +1,20 @@
 <template>
-  <g :transform="translate(node.x, node.y)">
-    <circle
-      :r="circleR"
-      :fill="circleFill"
-      :stroke-width="circleStrokeWidth"
-      stroke="black"
-      @click="circleClick"
-      @mouseenter="circleMouseenter"
-      @mouseleave="circleMouseleave"
-    />
-    <text y="-20" text-anchor="middle">
-      {{ node.real.name }}
-    </text>
-  </g>
+  <transition appear @enter="enter" @leave="leave">
+    <g :transform="translate(node.x, node.y)" :css="false">
+      <circle
+        :r="circleR"
+        :fill="circleFill"
+        :stroke-width="circleStrokeWidth"
+        stroke="black"
+        @click="circleClick"
+        @mouseenter="circleMouseenter"
+        @mouseleave="circleMouseleave"
+      />
+      <text y="-20" text-anchor="middle">
+        {{ node.real.name }}
+      </text>
+    </g>
+  </transition>
 </template>
 
 <script>
@@ -20,6 +22,7 @@
 import GraphNode from "../store/classes/GraphNode";
 import Link from "../store/classes/Link";
 import Node from "../store/classes/Node";
+import transitionCbFactory from "../transitionCbFactory";
 
 export default {
   props: {
@@ -31,6 +34,8 @@ export default {
   data() {
     return {
       circleHover: false,
+      simpleCircleR: 0,
+      bigCircleR: 0,
     };
   },
   computed: {
@@ -51,15 +56,15 @@ export default {
         this.node.real instanceof Node &&
         this.node.real.id in this.$store.state.runtime.nodes
       ) {
-        return 5;
+        return 1;
       }
       return 0;
     },
     circleR() {
       if (this.circleHover) {
-        return 20;
+        return this.bigCircleR;
       }
-      return 10;
+      return this.simpleCircleR;
     },
   },
   methods: {
@@ -88,6 +93,30 @@ export default {
     },
     circleMouseleave() {
       this.circleHover = false;
+    },
+    enter(el, done) {
+      window.requestAnimationFrame(
+        transitionCbFactory(
+          [el.children[0], el.children[1]],
+          ["r", "fill-opacity"],
+          [0.1, 0.01],
+          [0, 0],
+          [10, 1],
+          done
+        )
+      );
+    },
+    leave(el, done) {
+      window.requestAnimationFrame(
+        transitionCbFactory(
+          [el.children[0], el.children[1]],
+          ["r", "fill-opacity"],
+          [-0.1, -0.01],
+          [10, 1],
+          [0, 0],
+          done
+        )
+      );
     },
   },
 };
